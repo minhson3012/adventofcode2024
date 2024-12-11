@@ -117,8 +117,8 @@ def custom_sort(x):
 
 def challenge2(turns, turn_list):
     # Answer: 1831
+    # This code produces 1886 loops for some reason
     # Example points: [6,3], [7,6], [7,7], [8,1], [8,3], [9,7]
-    # total = 0
 
     # direction_list = ["right", "down", "left", "up"]
     direction_list = ["up", "right", "down", "left"]
