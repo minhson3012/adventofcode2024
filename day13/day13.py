@@ -1,7 +1,7 @@
 import math
 
 def main():
-    input = readFile("d:\\adventofcode2024\\day13\\input.txt")
+    input = readFile("input.txt")
     challenge1_result = challenge1(input)
     print("Challenge 1: ", challenge1_result)
     # challenge2_result = challenge2(input)
