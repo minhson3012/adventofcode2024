@@ -1,5 +1,5 @@
 def main():
-    input, moves, max_length, max_height = readFile("d:\\adventofcode2024\\day15\\input.txt")
+    input, moves, max_length, max_height = readFile("input.txt")
     # challenge1_result = challenge1(input, moves, max_length)
     # print("Challenge 1: ", challenge1_result)
     challenge2_result = challenge2(input, moves, max_length, max_height)
