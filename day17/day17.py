@@ -40,35 +40,31 @@ def challenge1(input):
     return ",".join(output)
 
 def challenge2(input):
-    # [14680, 1835, 229, 28, 3, 0]
-    program = [int(x) for x in input[4].split(",")]
+    # Answer: 164278899142333
+    return do_the_thing(input, 0, 1)
 
-    commands = program.copy()[:-2]
-    commands = [commands[i:i + 2] for i in range(0, len(commands), 2)]
+# Check from end of the output to start, shift reg_A by 3 bits after every loop to try and find the right value
+def do_the_thing(input, reg_A, current_index, valid = set()):
+    reg_B = input[1]
+    reg_C = input[2]
+    program = input[4]
+    commands = [x for x in input[4].split(",")]
 
-    commands.reverse()
-    print(commands)
+    for i in range(8):
+        new_A = (reg_A << 3) | i
+        output = challenge1([new_A, reg_B, reg_C, "", program])
+        output_split = output.split(",")
+        
+        if(output_split == commands[-current_index:]):
+            if(output == program):
+                valid.add(new_A)
+            else:
+                do_the_thing(["", reg_B, reg_C, "", program], new_A, current_index + 1, valid)
 
-    reg_A = 0
-    reg_B = 0
-    reg_C = 0
-    loop_num = len(program)
-
-    # (x / (2*3)) = 8 * y
-    while loop_num > 0:
-        for i in commands:
-            opcode = i[0]
-            operand = program[1]
-
-            if opcode == 0:
-                if(operand <= 3):
-                    reg_A = reg_A * pow(2, operand)
-            if opcode == 5:
-                reg_A += program[loop_num - 1]
-        loop_num -= 1
-
-    print(challenge1)
-    return
+    if len(valid) > 0:
+        return min(valid)
+    
+    return 0
 
 def get_combo_value(operand, A, B, C):
     if(operand == 4):
@@ -87,8 +83,8 @@ def main():
     input = readFile("d:\\adventofcode2024\\day17\\input.txt")
     challenge1_result = challenge1(input)
     print("Challenge 1: ", challenge1_result)
-    # challenge2_result = challenge2(input)
-    # print("Challenge 2: ", challenge2_result)
+    challenge2_result = challenge2(input)
+    print("Challenge 2: ", challenge2_result)
 
 def readFile(filename):
     file = open(filename, "r")

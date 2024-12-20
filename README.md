@@ -18,4 +18,4 @@ Advent of Code 2024, done poorlier
 |  14 |   ✔️  |    ✔️  |
 |  15 |   ✔️  |    ✔️  |
 |  16 |   ✔️  |    ✔️  |
-|  17 |   ✔️  |    ❌  |
+|  17 |   ✔️  |    ❓  |   Part 2 solved thanks to hints
