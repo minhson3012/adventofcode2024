@@ -4,7 +4,7 @@ SIZE = 71
 BYTE = 1024
 
 def main():
-    input, input_lines = readFile("d:\\adventofcode2024\\day18\\input.txt")
+    input, input_lines = readFile("input.txt")
     # challenge1_result = challenge1(input)
     # print("Challenge 1: ", challenge1_result)
     challenge2_result = challenge2(input_lines)
