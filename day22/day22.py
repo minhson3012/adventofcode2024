@@ -1,7 +1,7 @@
 NUM_OF_MIXES = 2000
 
 def main():
-    input = readFile("d:\\adventofcode2024\\day22\\input.txt")
+    input = readFile("input.txt")
     challenge1_result = challenge1(input)
     print("Challenge 1: ", challenge1_result)
 

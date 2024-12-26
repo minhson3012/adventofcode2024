@@ -23,3 +23,4 @@ Advent of Code 2024, done poorlier
 |  19 |   ✔️  |    ✔️  |                                |
 |  20 |   ✔️  |    ✔️  |                                |
 |  21 |   ✔️  |    ✔️  |  Thanks reddit for the pseudocode and general idea|
+|  22 |   ✔️  |    ✔️  |                                |
