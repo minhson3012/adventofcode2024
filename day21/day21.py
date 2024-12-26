@@ -95,6 +95,9 @@ def challenge1(input):
         total += command * numeric
     return total
 
+# Each key input can be split into smaller inputs that ends with an A
+# Find the smallest input for each sub input at each depth, going down to the first bot
+# Then add them into a cache
 def challenge2(input):
     # Answer: 248566068436630
     total = 0
