@@ -25,4 +25,4 @@ Advent of Code 2024, done poorlier
 |  21 |   ✔️  |    ✔️  |Thanks reddit for the pseudocode and general idea|
 |  22 |   ✔️  |    ✔️  |                                |
 |  23 |   ✔️  |    ✔️  |Thanks to Bron-Kerbosch algorithm|
-|  24 |   ✔️  |      |                                |
+|  24 |   ✔️  |    ❓  |Part 2 solved thanks to hints   |

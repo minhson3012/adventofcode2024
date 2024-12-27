@@ -2,6 +2,8 @@ def main():
     base_values, z_values, gates = readFile("input.txt")
     challenge1_result = challenge1(base_values, z_values, gates)
     print("Challenge 1: ", challenge1_result)
+    challenge2_result = challenge2(z_values, gates)
+    print("Challenge 2: ", challenge2_result)
 
 def calculate(base_values, gates, current_item):
     gate1, gate2, logic_gate = gates[current_item]
@@ -31,6 +33,32 @@ def challenge1(base_values, z_values, gates):
     sorted_values = dict(sorted(z_values.items(), reverse=True))
     value_str = "".join(map(str, sorted_values.values()))
     return int(value_str, 2)
+
+def challenge2(z_values, gates):
+    # Answer: btb,cmv,mwp,rdg,rmj,z17,z23,z30
+    highest_z = "z" + str(len(z_values) - 1).zfill(2)
+    wrong = set()
+    for gate in gates:
+        gate1, gate2, logic = gates[gate]
+
+        if gate[0] == "z" and logic != "XOR" and gate != highest_z:
+            wrong.add(gate)
+        elif (logic == "XOR" 
+            and gate[0] not in ["x", "y", "z"]
+            and gate1[0] not in ["x", "y", "z"]
+            and gate2[0] not in ["x", "y", "z"]):
+            wrong.add(gate)
+        elif logic == "AND" and "x00" not in [gate1, gate2]:
+            for subgate in gates:
+                subgate1, subgate2, sublogic = gates[subgate]
+                if (gate == subgate1 or gate == subgate2) and sublogic != "OR":
+                    wrong.add(gate)
+        elif logic == "XOR":
+            for subgate in gates:
+                subgate1, subgate2, sublogic = gates[subgate]
+                if (gate == subgate1 or gate == subgate2) and sublogic == "OR":
+                    wrong.add(gate)
+    return ",".join(sorted(wrong))
 
 def readFile(filename):
     file = open(filename, "r")
