@@ -26,3 +26,4 @@ Advent of Code 2024, done poorlier
 |  22 |   ✔️  |    ✔️  |                                |
 |  23 |   ✔️  |    ✔️  |Thanks to Bron-Kerbosch algorithm|
 |  24 |   ✔️  |    ❓  |Part 2 solved thanks to hints   |
+|  25 |   ✔️  |        |                                |
