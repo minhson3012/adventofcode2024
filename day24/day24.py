@@ -34,6 +34,8 @@ def challenge1(base_values, z_values, gates):
     value_str = "".join(map(str, sorted_values.values()))
     return int(value_str, 2)
 
+# If the output of a gate is z, then the operation has to be XOR unless it is the last bit.
+# If the output of a gate is not z and the inputs are not x, y then it has to be AND / OR, but not XOR.
 def challenge2(z_values, gates):
     # Answer: btb,cmv,mwp,rdg,rmj,z17,z23,z30
     highest_z = "z" + str(len(z_values) - 1).zfill(2)
